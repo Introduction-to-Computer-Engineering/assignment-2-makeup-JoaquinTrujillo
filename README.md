@@ -82,11 +82,37 @@ This assignment asks you to go complete the Final Project for the [Intro to CS c
 
 ### Description
 
-#### Goal
-TODO
+#### Goal: MONEY TRACKER/READER
+##### My Micro:Bit Project consists of
+1. A money counting system (Button A +1$/Button B -1$)
+2. A way to show your total dollar amount (Buttons A and B)
+3. A start up screen and that shows the name of the Programm ($MAN)
+4. On the Shake gesture tells you if you are in debt or not depending on your dollar amount while playing a music melody that can only be stopped when Button A is pressed
+5. On the tilt left gesture it randomly picks if you will end up poor or rich and shows the string accordingly
+6. On Buttons AB it will then send a radio signal to a microbit on the same radio group saying im rich and showing your dollar amount while playing an e note
+7. On the screen down gesture it picks a random number out of the array and shows it plus the string MILLIONS to show you how much money you will make in your life time.
 
 #### Design process
-TODO
+1. to start the screen saver and title of the program i plotted leds and their brightness into a forever function
+2. for the counting system i assigned a variable named dollarAmount to 0 and then wrapped it in an input function which would add or minus one depending on which button was pressed
+3. I also added basic.showNumber (dollarAmount) into the A and B input functions to show the number and a string to both saying one less ore plus one
+4.For the shake gesture i wrapped a loop into the function then inside of that loop added a condition while to play a melody until the controller pressed A 
+in the sahke gesture function i then added if the dollar amount is less than or equal to zero to showSting no debt or else show string debt
+5. I then added a boolean variable under the name fortuneOne which i then wrapped in the tilt left gesture and assigned the computer to pick a random boolean if it was true it would show string rich meaning you will get rich if it was false it would show string poor
+6. On buttons AB pressed it would send your dollar amount, a string saying im rich, and a note to radio group 1 and when recieved will send a string to you saying recieved.
+7. On gesture screen down it would choose between a random number of the array variable called dollarMillions and will show that number + the string millions to show you how much money you will make
 
 #### JS Constructs & objects
-TODO
+
+##### Constructs
+1. Button A
+2. Button B
+3. Gesture Shake
+4. Gesture tilt left
+5. Gesture screen down
+
+##### Objects
+1. Basic forever
+2. radio.onRecievedString
+3. Input.buttonIsPressed(Button.A)
+4. All other functions wrapped in inputs
